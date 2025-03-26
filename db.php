@@ -1,10 +1,11 @@
 <?php
-$host = 'localhost';
-$user = 'root'; // Change if needed
-$pass = ''; // Change if needed
-$db = 'todo_list';
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "todo_list"; // Make sure it matches the database you created
 
-$conn = new mysqli($host, $user, $pass, $db);
+$conn = new mysqli($servername, $username, $password, $database);
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
