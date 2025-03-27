@@ -56,7 +56,7 @@ $result = $conn->query("SELECT * FROM tasks ORDER BY created_at DESC");
             <?php while ($row = $result->fetch_assoc()): ?>
                 <li id="task-<?= $row['id'] ?>" class="flex justify-between items-center bg-gray-200 p-2 rounded hover:animate-glow transition duration-300">
                     <div>
-                        <span class="<?= $row['completed'] ? 'text-gray-500' : 'animate-shake' ?>">
+                        <span class="<?= isset($row['completed']) && $row['completed'] ? 'text-gray-500' : '' ?>">
                             <?= htmlspecialchars($row['title']) ?>
                         </span>
                         <?php if ($row['due_time']): ?>
